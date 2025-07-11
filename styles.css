@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Sedgwick+Ave&display=swap');
+:root{
+
+
+--Neutral900: hsl(227, 75%, 14%);
+--Neutral800: hsl(226, 25%, 17%);
+--Neutral700: hsl(225, 23%, 24%);
+--Neutral600: hsl(226, 11%, 37%);
+--Neutral300: hsl(0, 0%, 78%);
+--Neutral200: hsl(217, 61%, 90%);
+--Neutral100: hsl(0, 0%, 93%);
+--Neutral0: hsl(200, 60%, 99%);
+
+
+--Red400: hsl(3, 86%, 64%);
+--Red500: hsl(3, 71%, 56%);
+--Red700: hsl(3, 77%, 44%);
+
+
+
+--LightGradient: `linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%)`;
+--DarkGradient: `linear-gradient(180deg, #040918 0%, #091540 100%)`;
+font-size: 16px;
+font-family: 'Noto Sans', sans-serif;
+color:var(--Neutral0);
+
+ --bg-main: var(--Neutral900);
+  --bg-card: var(--Neutral800);
+  --bg-button: var(--Neutral600);
+  --text-color: var(--Neutral0);
+  --border-button:var(--Neutral100);
+
+    --wizard-yellow:rgba(255, 252, 93, 1);
+  --wizard-pink:rgba(255, 0, 250, 1);
+  --wizard-green:rgba(69, 228, 4, 0.8);
+
+}
+
+
+body.light-mode {
+  --bg-main: var(--Neutral100);
+  --bg-card: var(--Neutral200);
+  --bg-button: var(--Neutral0);
+  --border-button:var(--Neutral600);
+  color: var(--Neutral900);
+}
+body{
+    background-color: var(--bg-main);
+}
+
+main{
+    width:90%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+.settings-bar{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height:fit-content;
+    margin:2rem auto;
+    background-color: var(--bg-card);
+    padding: 0 2rem;
+    border-radius: 8px;
+}
+
+.colorscheme {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--bg-button);
+  background-image: url("https://raw.githubusercontent.com/workname-wizard/Add-On-Component/refs/heads/main/browser-extensions-manager-ui-main/assets/images/icon-sun.svg");
+  background-size:1.2rem;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+
+body.light-mode .colorscheme {
+ background-image: url("https://raw.githubusercontent.com/workname-wizard/Add-On-Component/refs/heads/main/browser-extensions-manager-ui-main/assets/images/icon-moon.svg");
+
+}
+
+nav{
+display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+ width:100%;
+  border-radius: 8px;
+  height: 3rem;
+}
+nav ul{ display: flex;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;}
+nav li{
+    background-color: var(--bg-card);
+    height:fit-content;
+    width: fit-content;
+    padding:0.8rem;
+    border-radius: 12px;
+    text-align: center;
+    justify-content: center;
+}
+nav li:hover{
+    background: var(--Red500);
+}
+
+.elements {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 2rem 0;
+}
+.extension-item {
+  background-color: var(--bg-button);
+  border-radius: 15px;
+  overflow: hidden;
+  margin:0.3rem;
+}
+
+.extension-container{
+    display:flex;
+    flex-direction: row;
+    padding:1rem;
+}
+.extension-logo{
+    padding:0.5rem;
+}
+.extension-info{
+    padding:0.5rem;
+}
+.toggles{
+    display:flex;
+    justify-content: space-between;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  margin-left: 1rem;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--bg-card);
+  transition: 0.4s;
+  border-radius: 26px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: var(--Red400);
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+
+.remove{
+    all:unset;
+    border: 1px solid var(--border-button) ;
+    border-radius: 15px;
+    padding: 6px;
+
+}
+.remove:hover{
+    background-color: var(--bg-button);
+    border: 2px solid var(--Red500);
+}
+
+.credit{
+    all:unset;
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--wizard-yellow);
+    width:fit-content;
+    border-radius:12px;
+    margin-top:16px;
+
+
+}
+.credit p{
+        color:var(--wizard-pink);
+        font-family: 'Sedgwick Ave',sans-serif;
+        font-size:1.8rem;
+        margin:0.8rem;
+}
+.credit img{
+    width:auto;
+    height:1.8rem;
+    margin:0.8rem;
+}
+
+@media (max-width:768px)
+{
+    .elements{
+        display: grid;
+  grid-template-columns: repeat(1, 1fr);
+    }
+}
