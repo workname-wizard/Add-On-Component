@@ -23,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
               <p>${item.description}</p>
               <div class="toggles">
                 <button class="remove">Remove</button>
-                <label class="toggle-switch">
+                <label class="toggle-switch" aria-label="Toggle ${item.name} active status">
                   <input type="checkbox" class="status-toggle" ${item.isActive ? "checked" : ""}>
                   <span class="slider"></span>
                 </label>
